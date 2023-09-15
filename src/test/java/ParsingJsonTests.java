@@ -14,13 +14,13 @@ public class ParsingJsonTests {
     void parseJson() throws IOException {
         ObjectMapper mapper = new ObjectMapper().setLocale(new Locale("ru", "RU"));
         Friend friend = mapper.readValue(new File("src/test/resources/Friend.json"), Friend.class);
-        Map<String, String> map = Map.of("Отец", "Александр", "Сестра", "Маша");
+        Map<String, String> relatives = Map.of("Отец", "Александр", "Сестра", "Маша");
 
         Assertions.assertEquals("Саня", friend.getName());
         Assertions.assertEquals(30, friend.getAge());
         Assertions.assertEquals("М", friend.getGender());
         Assertions.assertEquals(true, friend.isNitPicker());
         Assertions.assertArrayEquals( new String[] { "бухать", "смотреть аниме", "душнить" }, friend.getHobbies());
-        Assertions.assertEquals(map, friend.getRelatives());
+        Assertions.assertEquals(relatives, friend.getRelatives());
     }
 }
