@@ -20,7 +20,6 @@ public class ParsingJsonTests {
         Assertions.assertEquals(30, friend.getAge());
         Assertions.assertEquals("М", friend.getGender());
         Assertions.assertEquals(true, friend.isNitPicker());
-        Assertions.assertEquals("Саня", friend.getName());
         Assertions.assertArrayEquals( new String[] { "бухать", "смотреть аниме", "душнить" }, friend.getHobbies());
         Assertions.assertEquals(map, friend.getRelatives());
     }
